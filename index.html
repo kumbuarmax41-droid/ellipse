@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Ellipse - Révision Bac</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #0f172a;
+      color: white;
+      margin: 0;
+    }
+
+    header {
+      background: #1e293b;
+      padding: 20px;
+      text-align: center;
+    }
+
+    h1 {
+      margin: 0;
+      color: #38bdf8;
+    }
+
+    .container {
+      padding: 20px;
+      max-width: 900px;
+      margin: auto;
+    }
+
+    .exo, .info {
+      background: #1e293b;
+      padding: 15px;
+      margin: 15px 0;
+      border-radius: 10px;
+    }
+
+    input {
+      padding: 8px;
+      border-radius: 5px;
+      border: none;
+      margin-top: 10px;
+    }
+
+    button {
+      margin-top: 10px;
+      padding: 8px 12px;
+      border: none;
+      border-radius: 5px;
+      background: #38bdf8;
+      cursor: pointer;
+    }
+
+    .result {
+      margin-top: 10px;
+      font-weight: bold;
+    }
+
+    .good { color: #22c55e; }
+    .bad { color: #ef4444; }
+
+    footer {
+      background: #0b1220;
+      padding: 20px;
+      text-align: center;
+      font-size: 14px;
+      color: #94a3b8;
+      margin-top: 30px;
+    }
+
+    a { color: #38bdf8; }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <h1>📘 Ellipse</h1>
+  <p>Révision Bac - Maths & Physique</p>
+</header>
+
+<div class="container">
+
+  <!-- POURQUOI -->
+  <div class="info">
+    <h2>🎯 Pourquoi Ellipse existe ?</h2>
+    <p>
+      Ellipse a été créée pour aider les élèves à se préparer au bac en maths et physique
+      avec des exercices simples, interactifs et accessibles partout.
+      L’objectif est de transformer la révision en quelque chose de clair, rapide et motivant.
+    </p>
+  </div>
+
+  <!-- EXO 1 -->
+  <div class="exo">
+    <h3>➗ Maths : Équation simple</h3>
+    <p>2x + 4 = 10</p>
+    <input id="q1" placeholder="Valeur de x">
+    <button onclick="check1()">Vérifier</button>
+    <div id="r1" class="result"></div>
+  </div>
+
+  <!-- EXO 2 -->
+  <div class="exo">
+    <h3>📐 Maths : Dérivée</h3>
+    <p>f(x) = x² → f'(x) = ? (coefficient devant x)</p>
+    <input id="q2" placeholder="Réponse">
+    <button onclick="check2()">Vérifier</button>
+    <div id="r2" class="result"></div>
+  </div>
+
+  <!-- EXO 3 -->
+  <div class="exo">
+    <h3>⚡ Physique : Vitesse</h3>
+    <p>100 m parcourus en 5 s → vitesse ?</p>
+    <input id="q3" placeholder="Réponse">
+    <button onclick="check3()">Vérifier</button>
+    <div id="r3" class="result"></div>
+  </div>
+
+  <!-- INFO XTRONICS -->
+  <div class="info">
+    <h2>🏷️ À propos</h2>
+    <p>
+      Ellipse est un projet développé par <strong>Xtronics</strong>, une initiative orientée
+      vers la création d’outils éducatifs simples et accessibles pour les élèves.
+    </p>
+  </div>
+
+  <!-- POLITIQUE -->
+  <div class="info">
+    <h2>🛡️ Politique de confidentialité</h2>
+    <p>
+      Ellipse ne collecte aucune donnée personnelle.<br>
+      Aucune inscription, aucun suivi, aucune base de données utilisateur n’est utilisée.<br>
+      Les réponses aux exercices restent uniquement dans ton navigateur.<br><br>
+
+      Ce site fonctionne entièrement en mode local (site statique), donc tout est privé par conception.
+    </p>
+  </div>
+
+</div>
+
+<footer>
+  © 2026 Ellipse - Xtronics • Site éducatif statique
+</footer>
+
+<script>
+  function check1() {
+    let v = document.getElementById("q1").value;
+    let r = document.getElementById("r1");
+    if (parseFloat(v) === 3) {
+      r.innerHTML = "✔ Correct";
+      r.className = "result good";
+    } else {
+      r.innerHTML = "✘ Faux";
+      r.className = "result bad";
+    }
+  }
+
+  function check2() {
+    let v = document.getElementById("q2").value;
+    let r = document.getElementById("r2");
+    if (parseFloat(v) === 2) {
+      r.innerHTML = "✔ Correct";
+      r.className = "result good";
+    } else {
+      r.innerHTML = "✘ Faux";
+      r.className = "result bad";
+    }
+  }
+
+  function check3() {
+    let v = document.getElementById("q3").value;
+    let r = document.getElementById("r3");
+    if (parseFloat(v) === 20) {
+      r.innerHTML = "✔ Correct";
+      r.className = "result good";
+    } else {
+      r.innerHTML = "✘ Faux";
+      r.className = "result bad";
+    }
+  }
+</script>
+
+</body>
+</html>
