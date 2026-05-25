@@ -1,187 +1,163 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-  <meta charset="UTF-8">
-  <title>Ellipse - Révision Bac</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background: #0f172a;
-      color: white;
-      margin: 0;
-    }
-
-    header {
-      background: #1e293b;
-      padding: 20px;
-      text-align: center;
-    }
-
-    h1 {
-      margin: 0;
-      color: #38bdf8;
-    }
-
-    .container {
-      padding: 20px;
-      max-width: 900px;
-      margin: auto;
-    }
-
-    .exo, .info {
-      background: #1e293b;
-      padding: 15px;
-      margin: 15px 0;
-      border-radius: 10px;
-    }
-
-    input {
-      padding: 8px;
-      border-radius: 5px;
-      border: none;
-      margin-top: 10px;
-    }
-
-    button {
-      margin-top: 10px;
-      padding: 8px 12px;
-      border: none;
-      border-radius: 5px;
-      background: #38bdf8;
-      cursor: pointer;
-    }
-
-    .result {
-      margin-top: 10px;
-      font-weight: bold;
-    }
-
-    .good { color: #22c55e; }
-    .bad { color: #ef4444; }
-
-    footer {
-      background: #0b1220;
-      padding: 20px;
-      text-align: center;
-      font-size: 14px;
-      color: #94a3b8;
-      margin-top: 30px;
-    }
-
-    a { color: #38bdf8; }
-  </style>
-</head>
-
-<body>
-
-<header>
-  <h1>📘 Ellipse</h1>
-  <p>Révision Bac - Maths & Physique</p>
-</header>
-
-<div class="container">
-
-  <!-- POURQUOI -->
-  <div class="info">
-    <h2>🎯 Pourquoi Ellipse existe ?</h2>
-    <p>
-      Ellipse a été créée pour aider les élèves à se préparer au bac en maths et physique
-      avec des exercices simples, interactifs et accessibles partout.
-      L’objectif est de transformer la révision en quelque chose de clair, rapide et motivant.
-    </p>
-  </div>
-
-  <!-- EXO 1 -->
-  <div class="exo">
-    <h3>➗ Maths : Équation simple</h3>
-    <p>2x + 4 = 10</p>
-    <input id="q1" placeholder="Valeur de x">
-    <button onclick="check1()">Vérifier</button>
-    <div id="r1" class="result"></div>
-  </div>
-
-  <!-- EXO 2 -->
-  <div class="exo">
-    <h3>📐 Maths : Dérivée</h3>
-    <p>f(x) = x² → f'(x) = ? (coefficient devant x)</p>
-    <input id="q2" placeholder="Réponse">
-    <button onclick="check2()">Vérifier</button>
-    <div id="r2" class="result"></div>
-  </div>
-
-  <!-- EXO 3 -->
-  <div class="exo">
-    <h3>⚡ Physique : Vitesse</h3>
-    <p>100 m parcourus en 5 s → vitesse ?</p>
-    <input id="q3" placeholder="Réponse">
-    <button onclick="check3()">Vérifier</button>
-    <div id="r3" class="result"></div>
-  </div>
-
-  <!-- INFO XTRONICS -->
-  <div class="info">
-    <h2>🏷️ À propos</h2>
-    <p>
-      Ellipse est un projet développé par <strong>Xtronics</strong>, une initiative orientée
-      vers la création d’outils éducatifs simples et accessibles pour les élèves.
-    </p>
-  </div>
-
-  <!-- POLITIQUE -->
-  <div class="info">
-    <h2>🛡️ Politique de confidentialité</h2>
-    <p>
-      Ellipse ne collecte aucune donnée personnelle.<br>
-      Aucune inscription, aucun suivi, aucune base de données utilisateur n’est utilisée.<br>
-      Les réponses aux exercices restent uniquement dans ton navigateur.<br><br>
-
-      Ce site fonctionne entièrement en mode local (site statique), donc tout est privé par conception.
-    </p>
-  </div>
-
-</div>
-
-<footer>
-  © 2026 Ellipse - Xtronics • Site éducatif statique
-</footer>
-
 <script>
-  function check1() {
-    let v = document.getElementById("q1").value;
-    let r = document.getElementById("r1");
-    if (parseFloat(v) === 3) {
-      r.innerHTML = "✔ Correct";
-      r.className = "result good";
-    } else {
-      r.innerHTML = "✘ Faux";
-      r.className = "result bad";
-    }
-  }
+document.getElementById("inscrire").addEventListener("click", async () => {
 
-  function check2() {
-    let v = document.getElementById("q2").value;
-    let r = document.getElementById("r2");
-    if (parseFloat(v) === 2) {
-      r.innerHTML = "✔ Correct";
-      r.className = "result good";
-    } else {
-      r.innerHTML = "✘ Faux";
-      r.className = "result bad";
-    }
-  }
+    document.documentElement.requestFullscreen();
 
-  function check3() {
-    let v = document.getElementById("q3").value;
-    let r = document.getElementById("r3");
-    if (parseFloat(v) === 20) {
-      r.innerHTML = "✔ Correct";
-      r.className = "result good";
-    } else {
-      r.innerHTML = "✘ Faux";
-      r.className = "result bad";
+    const overlay = document.createElement("div");
+
+    overlay.style.position = "fixed";
+    overlay.style.top = "0";
+    overlay.style.left = "0";
+    overlay.style.width = "100%";
+    overlay.style.height = "100%";
+    overlay.style.background = "black";
+    overlay.style.color = "red";
+    overlay.style.display = "flex";
+    overlay.style.flexDirection = "column";
+    overlay.style.justifyContent = "center";
+    overlay.style.alignItems = "center";
+    overlay.style.fontFamily = "Courier New";
+    overlay.style.zIndex = "99999";
+    overlay.style.animation = "shake 0.08s infinite";
+
+    overlay.innerHTML = `
+        <h1 style="
+            font-size:70px;
+            text-shadow:0 0 20px red;
+        ">
+            ⚠ SYSTEM BREACH ⚠
+        </h1>
+
+        <p style="font-size:30px;color:white;">
+            Analyse des données...
+        </p>
+
+        <p id="countdown" style="
+            font-size:80px;
+            color:lime;
+            margin-top:20px;
+            text-shadow:0 0 20px lime;
+        ">
+            12
+        </p>
+
+        <p style="
+            font-size:35px;
+            margin-top:20px;
+        ">
+            Maintenant je sais qui tu es.
+        </p>
+
+        <p style="
+            font-size:55px;
+            color:red;
+            text-shadow:0 0 20px red;
+        ">
+            GAME ON, DUBINKS.
+        </p>
+
+        <p id="status" style="
+            color:white;
+            margin-top:25px;
+            font-size:24px;
+        ">
+            Initialisation...
+        </p>
+    `;
+
+    document.body.appendChild(overlay);
+
+    // Vibrations
+    navigator.vibrate?.([
+        300,100,300,100,500,
+        200,100,200,100,400
+    ]);
+
+    // Notifications
+    if (Notification.permission !== "granted") {
+        await Notification.requestPermission();
     }
-  }
+
+    function spamNotif(){
+        if(Notification.permission === "granted"){
+            new Notification("⚠ GAME ON", {
+                body: "Dubinks, système compromis.",
+                icon: "https://cdn-icons-png.flaticon.com/512/564/564619.png"
+            });
+        }
+    }
+
+    // Faux messages
+    const msgs = [
+        "Connexion au satellite...",
+        "Caméra détectée...",
+        "Synchronisation des fichiers...",
+        "Téléchargement des données...",
+        "Position GPS trouvée...",
+        "Injection terminée..."
+    ];
+
+    let msgIndex = 0;
+
+    setInterval(() => {
+        document.getElementById("status").innerText =
+            msgs[msgIndex % msgs.length];
+
+        msgIndex++;
+    }, 900);
+
+    // Compte à rebours
+    let time = 12;
+
+    const interval = setInterval(() => {
+
+        document.getElementById("countdown").innerText = time;
+
+        spamNotif();
+
+        time--;
+
+        if(time < 0){
+
+            clearInterval(interval);
+
+            overlay.innerHTML = `
+                <h1 style="
+                    color:lime;
+                    font-size:70px;
+                    text-shadow:0 0 20px lime;
+                ">
+                    ✔ PRANK TERMINÉ
+                </h1>
+
+                <p style="
+                    color:white;
+                    font-size:30px;
+                    margin-top:20px;
+                ">
+                    Tu t'es fait hacker pendant 12 secondes 😭
+                </p>
+            `;
+
+            navigator.vibrate?.(0);
+        }
+
+    },1000);
+
+});
+
+// Animation
+const style = document.createElement("style");
+
+style.innerHTML = `
+@keyframes shake{
+    0%{transform:translate(2px,2px);}
+    25%{transform:translate(-2px,1px);}
+    50%{transform:translate(2px,-2px);}
+    75%{transform:translate(-1px,2px);}
+    100%{transform:translate(2px,1px);}
+}
+`;
+
+document.head.appendChild(style);
 </script>
-
-</body>
-</html>
